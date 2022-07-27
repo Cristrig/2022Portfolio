@@ -20,14 +20,14 @@
     <!-- home section -->
     <section class="home-section active ">
       <h1 class="hero-heading">
-        hello, i am <br />
+        FullStack Developer<br />
         Cristian
       </h1>
       <img src="./assets/imgs/download.jpeg" class="home-img" alt="" />
     </section>
     <!-- project section -->
     <section class="project-section active">
-      <h1 class="project-heading">some of my projects</h1>
+      <h1 class="project-heading">Projects</h1>
       <div class="project-container">
         <div class="project-card">
           <img src="./assets/imgs/download.jpeg" class="project-img" alt="" />
@@ -143,6 +143,42 @@
 </div>
 </section>
 
+<!-- contact section -->
+<section class="contact-section active">
+    <form class="contact-form" onsubmit="sendEmail(); reset(); return false;">
+        <input type="text" name="name" id="name" autocomplete="off" placeholder="name">
+        <input type="text" name="email" id="email" autocomplete="off" placeholder="email">
+        <textarea name="msg" id="message" placeholder="message" autocomplete="off"></textarea>
+        <button type="submit" class="form-submit-btn">contact</button>
+    </form>
+    <!-- map -->
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d182055.91912166864!2d-88.13057802396277!3d44.5228598386418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8802e2e809b380f3%3A0x6370045214dcf571!2sGreen%20Bay%2C%20WI!5e0!3m2!1sen!2sus!4v1656443225077!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> </div>
+</section> 
+<script src="./assets/js/script.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+function sendEmail() {
+    Email.send({
+      Host: "smtp.gmail.com",
+      Username: "cbtrigueros06@gmail.com",
+      Password: "Carmen20",
+      To: "cbtrigueros06@outlook.com",
+      From: document.getElementById("email").value,
+      Subject: "New contact Form Enquiry",
+      Body:
+        "Name: " +
+        document.getElementById("name").value +
+        "<br> Email: " +
+        document.getElementById("email").value +
+        "<br> Message: " +
+        document.getElementById("message").value,
+    }).then(
+        message => alert("Message Sent Successfully")
+        );
+  }
+  </script>
+
   </body>
-  <script src="./assets/js/script.js"></script>
+
 </html>
